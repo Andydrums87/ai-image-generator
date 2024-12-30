@@ -21,7 +21,7 @@ const Home = () => {
         h-[50vh] flex flex-col 
         items-center justify-center gap-10">
                <h2 className="text-white-100">Sign in to continue</h2>
-                <form action="http://localhost:8080/auth/google">
+                <form action="https://ai-image-generator-z95d.onrender.com//auth/google">
                     <button 
                     onClick={handleButtonClick}
                     type="submit" 
