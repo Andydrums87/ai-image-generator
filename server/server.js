@@ -11,7 +11,7 @@ const api_route = require("./routes/api")
 const app = express();
 
 const corsOptions = {
-  origin: ['http://localhost:5173', 'http://192.168.0.9:5173', "http://192.168.0.9:8080", "http://localhost:8080", "http://localhost:8080/auth"],
+  origin: ['http://localhost:5173', 'http://192.168.0.9:5173', "http://192.168.0.9:8080", "http://localhost:8080", "http://localhost:8080/auth", "https://ai-image-generator-backend-wew8.onrender.com", "https://ai-image-generator-z95d.onrender.com"],
   credentials: true,
   methods: ['GET', 'PUT', 'POST', 'DELETE', 'HEAD'],
 };
