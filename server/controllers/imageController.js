@@ -39,7 +39,7 @@ const createImage = async (req, res) => {
               public_id: `${Date.now()}`,
             });
            const image = await Image.create({
-              imageUrl: result.url,
+              imageUrl: result.secure_url,
               prompt,
               size,
               style,
