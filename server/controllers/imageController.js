@@ -35,6 +35,7 @@ const createImage = async (req, res) => {
       const result = await cloudinary.uploader.upload(imgSrc, {
               overwrite: true,
               invalidate: true,
+              secure: true,
               public_id: `${Date.now()}`,
             });
            const image = await Image.create({
