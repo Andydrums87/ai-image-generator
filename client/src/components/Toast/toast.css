@@ -1,0 +1,30 @@
+.toast {
+
+    font-size: 0.875rem !important;
+    font-weight: 600;
+
+    color: white;
+  }
+  
+  .toast__progress {
+      background-color: #7C71FF;
+  }
+  
+  .toast__body {
+      display: flex;
+      gap:50px;
+     
+      
+  }
+  
+  .toast__wrapper {
+    background-color:#212936;
+    height:5px;
+    color: white;
+    font-size: 12px;
+    width:400px;
+    margin-top:10px;
+  }
+  
+  
+  

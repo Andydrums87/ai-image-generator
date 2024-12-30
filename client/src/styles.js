@@ -1,0 +1,17 @@
+const styles = {
+    listHeadText:
+    "text-grey-100 text-xs mb-2 font-semibold",
+    listSubText:
+    "text-white-100 md:mb-10 mb-2 text-sm font-light",
+    formLabel: 
+    "bg-grey-black text-white-100 text-xs py-[7px] px-6 cursor-pointer rounded-md",
+    imageBorder: 
+    "border-grey-black border-4 border-solid rounded-md",
+    activeLink: 
+    "h-[35px] ml-2 bg-violet-100 gap-3 items-center md:w-[35px] rounded-md text-xs flex w-[100%] text-white-100 md:justify-center",
+     normalLink: 
+     "h-[35px] ml-2 gap-3 bg-transparent items-center md:w-[35px] rounded-md text-xs flex w-[100%] text-white-100 md:justify-center",
+     resultsContainer: 
+     "md:columns-4 sm:columns-2 columns-1 md:w-[100%] w-[95%] m-auto relative z-0"
+}
+export { styles }
