@@ -34,6 +34,8 @@ app.use(session({
     cookie: { maxAge: Date.now() + 1000 * 60 * 60 * 24 * 30, secure: true}
 }))
 
+app.set("trust proxy", 1);
+
 app.use(passport.initialize());
 app.use(passport.session());
 
