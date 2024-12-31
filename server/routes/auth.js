@@ -13,7 +13,7 @@ router.get('/google/callback',
         const user = User.findOne({ email })
         if(!user) return res.sendStatus(401)
             req.user = user;
-        res.redirect('https://ai-image-generator-z95d.onrender.com/create')
+        res.redirect('https://ai-image-generator-z95d.onrender.com')
     }
 )
 router.get("/login/sucess",async(req,res)=>{
