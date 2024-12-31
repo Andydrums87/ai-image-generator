@@ -6,15 +6,13 @@ const router = express.Router();
 router.get('/google', passport.authenticate('google', { scope: ['openid', 'https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email']}))
 
 router.get('/google/callback',
-    passport.authenticate('google', { failureRedirect: '/', scope: ['openid', 'https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email']}), 
+    passport.authenticate('google', { failureRedirect: '/', successRedirect: "https://ai-image-generator-z95d.onrender.com"}), 
     (req, res) => {
         const { email } = req.body
         const user = User.findOne({ email })
-        if(!user) {
-           return res.sendStatus(401)
-        }
-        req.user = user;
-        res.redirect('https://ai-image-generator-z95d.onrender.com')
+        if(!user) return res.sendStatus(401)
+            req.user = user;
+        // res.redirect('/')
     }
 )
 router.get("/login/sucess",async(req,res)=>{
