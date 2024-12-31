@@ -11,8 +11,8 @@ router.get('/google/callback',
         const { email } = req.body
         const user = User.findOne({ email })
         if(!user) return res.sendStatus(401)
-            req.user = user;
-        res.redirect('/')
+        req.user = user;
+        // res.redirect('/')
     }
 )
 router.get("/login/sucess",async(req,res)=>{
