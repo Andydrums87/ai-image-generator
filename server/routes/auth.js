@@ -1,7 +1,6 @@
 const express = require("express");
 const passport = require("passport");
 const User = require("../models/user");
-const { trusted } = require("mongoose");
 const router = express.Router();
 
 router.get('/google', passport.authenticate('google', { scope: ['openid', 'https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email']}))
@@ -13,7 +12,7 @@ router.get('/google/callback',
         const user = User.findOne({ email })
         if(!user) return res.sendStatus(401)
             req.user = user;
-        res.redirect('https://ai-image-generator-z95d.onrender.com/create')
+        res.redirect('/')
     }
 )
 router.get("/login/sucess",async(req,res)=>{
