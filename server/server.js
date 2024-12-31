@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 require("./config/passport") (passport);
 
 app.use(bodyParser.json());
-app.set("trust proxy", 1)
+
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
