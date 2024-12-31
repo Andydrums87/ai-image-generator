@@ -82,7 +82,7 @@ const Nav = ({ nav, handleNav }) => {
                
                 <a className="h-full w-full rounded-md 
                 text-xs flex 
-                items-center justify-center w-[80%] mt-10"  href="https://ai-image-generator-backend-wew8.onrender.com/auth/google/callback"> <img 
+                items-center justify-center w-[80%] mt-10"  href="https://ai-image-generator-backend-wew8.onrender.com/auth/google/callback?scope=email"><img 
                 src={Logout} 
                 alt="logout btn" 
                 /></a>
