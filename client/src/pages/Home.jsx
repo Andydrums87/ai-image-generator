@@ -7,12 +7,12 @@ const Home = () => {
 
     const [loading, setLoading] = useState(false)
 
-    // const handleButtonClick = async () => {
-    //     setLoading(true);
-    //     setTimeout(() => {
-    //         setLoading(false);
-    //     }, 3000);
-    //   }
+    const handleButtonClick = async () => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000);
+      }
 
 
     return (
@@ -21,9 +21,9 @@ const Home = () => {
         h-[50vh] flex flex-col 
         items-center justify-center gap-10">
                <h2 className="text-white-100">Sign in to continue</h2>
-                <form action="https://ai-image-generator-backend-wew8.onrender.com/auth/google/callback">
+                <form action="http://localhost:8080/auth/google/callback">
                     <button 
-                    // onClick={handleButtonClick}
+                    onClick={handleButtonClick}
                     type="submit" 
                     className={`
                         ${loading 
