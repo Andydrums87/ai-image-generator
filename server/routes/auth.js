@@ -13,7 +13,7 @@ router.get('/google/callback',
         const user = User.findOne({ email })
         if(!user) return res.sendStatus(401)
             req.user = user;
-        res.redirect('http://localhost:5173/create')
+        res.redirect('/')
     }
 )
 router.get("/login/sucess",async(req,res)=>{
