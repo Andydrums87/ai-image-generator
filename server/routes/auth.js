@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/google', passport.authenticate('google', { scope: ['openid', 'https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email']}))
 
 router.get('/google/callback',
-    passport.authenticate('google', { failureRedirect: '/' }), 
+    passport.authenticate('google', { failureRedirect: '/', scope: ['openid', 'https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email']}), 
     (req, res) => {
         const { email } = req.body
         const user = User.findOne({ email })
