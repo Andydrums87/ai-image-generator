@@ -3,9 +3,9 @@ const passport = require("passport");
 const User = require("../models/user");
 const router = express.Router();
 
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email']}))
+router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email']}))
 
-router.get('/google/callback',
+router.get('/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/'}), 
     (req, res) => {
         const { email } = req.body
