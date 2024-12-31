@@ -7,12 +7,12 @@ const Home = () => {
 
     const [loading, setLoading] = useState(false)
 
-    const handleButtonClick = async () => {
-        setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
-        }, 3000);
-      }
+    // const handleButtonClick = async () => {
+    //     setLoading(true);
+    //     setTimeout(() => {
+    //         setLoading(false);
+    //     }, 3000);
+    //   }
 
 
     return (
@@ -23,7 +23,7 @@ const Home = () => {
                <h2 className="text-white-100">Sign in to continue</h2>
                 <form action="https://ai-image-generator-backend-wew8.onrender.com/auth/google/callback">
                     <button 
-                    onClick={handleButtonClick}
+                    // onClick={handleButtonClick}
                     type="submit" 
                     className={`
                         ${loading 
