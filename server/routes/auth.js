@@ -4,7 +4,7 @@ const User = require("../models/user");
 const { trusted } = require("mongoose");
 const router = express.Router();
 
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email']}))
+router.get('/google', passport.authenticate('google', { scope: ['openid', 'profile', 'email']}))
 
 router.get('/google/callback',
     passport.authenticate('google', { failureRedirect: '/' }), 
