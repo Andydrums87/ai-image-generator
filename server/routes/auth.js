@@ -3,7 +3,7 @@ const passport = require("passport");
 const User = require("../models/user");
 const router = express.Router();
 
-router.get('/google', passport.authenticate('google', { scope: ['openid', 'https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email']}))
+router.get('/google', passport.authenticate('google', { scope: ['openid', 'profile', 'email']}))
 
 router.get('/google/callback',
     passport.authenticate('google', { failureRedirect: '/', successRedirect: "https://ai-image-generator-z95d.onrender.com"}), 
