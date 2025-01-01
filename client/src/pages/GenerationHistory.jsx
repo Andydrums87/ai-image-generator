@@ -5,6 +5,7 @@ import Image from "../components/Image";
 import Modal from "../components/Modal";
 import Skeleton from "../components/Skeleton/Skeleton";
 import Scroll from "../components/Scroll";
+import Empty from "../components/Empty";
 
 
 const GenerationHistory = () => {
@@ -26,7 +27,7 @@ const GenerationHistory = () => {
      <div className="w-full h-full px-10">
        <h1 className="text-white-100 mb-8">Generation History</h1>
        <Modal />
-       {images?.length === 0 ? <Empty  message={"Start creating images to view generated history"} /> : "" }
+       {images?.length === 0 ? <Empty message={"Start creating images to view generated history"} /> : "" }
            <Scroll 
            images={images} 
            fetchMoreImages={fetchMoreImages} 
