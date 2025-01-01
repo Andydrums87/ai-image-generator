@@ -152,7 +152,7 @@ const Nav = ({ nav, handleNav }) => {
                 className="h-full mt-20 w-full rounded-md 
                 text-xs py-3 pl-2 flex 
                 items-center w-[80%] gap-2 text-white" 
-                onClick={() => {handleLogout(); reset()}}
+                onClick={logout}
                 >
                 <img 
                 src={Logout} 
