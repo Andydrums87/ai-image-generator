@@ -17,7 +17,7 @@ const MyCollections = () => {
       }, [])
 
     return (
-        <div className=" gap-12 px-10 max-w-[100%] md:w-[95%] min-h-screen">
+        <div className=" gap-12 max-w-[100%] md:w-[95%] min-h-screen">
             <Modal />  
             <Toast />
             <h1 className="text-white mb-5">My Collections</h1>
