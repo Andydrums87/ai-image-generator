@@ -3,19 +3,24 @@ const passport = require("passport");
 const User = require("../models/user");
 const router = express.Router();
 
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email']}))
+router.get('/google', passport.authenticate('google', { scope: ['openid', 'profile', 'email']}))
 
 router.get('/google/callback',
     passport.authenticate('google', { failureRedirect: '/'}), 
     (req, res) => {
         const { email } = req.body
+        
         const user = User.findOne({ email })
+  
         if(!user) return res.sendStatus(401)
+     
             req.user = user;
-        // res.redirect('/')
+        
+        console.log(user)
+        res.redirect('https://ai-image-generator-z95d.onrender.com/create')
     }
 )
-router.get("/login/sucess",async(req,res)=>{
+router.get("/login/sucess", async(req,res)=>{
     if(req.user){
         res.status(200).json({ isLoggedIn: true, user:req.user})
     }else{

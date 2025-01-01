@@ -16,6 +16,7 @@ const openai = new OpenAI({
 
 const createImage = async (req, res) => {
     const { prompt, size, style } = req.body;
+    
 
     try {
       const response = await openai.images.generate({

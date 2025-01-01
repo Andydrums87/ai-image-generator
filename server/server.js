@@ -11,7 +11,7 @@ const api_route = require("./routes/api")
 const app = express();
 
 const corsOptions = {
-  origin: ['http://localhost:5173', 'http://192.168.0.9:5173', "http://192.168.0.9:8080", "http://localhost:8080", "http://localhost:8080/auth", "https://ai-image-generator-backend-wew8.onrender.com", "http://localhost:8080/auth", "https://ai-image-generator-backend-wew8.onrender.com/auth", "https://ai-image-generator-z95d.onrender.com"],
+  origin: ['http://localhost:5173', 'http://192.168.0.9:5173', "http://192.168.0.9:8080", "http://localhost:8080", "http://localhost:8080/auth/google/callback", "https://ai-image-generator-backend-wew8.onrender.com", "https://ai-image-generator-backend-wew8.onrender.com/auth/google/callback", "http://localhost:8080/auth", "https://ai-image-generator-backend-wew8.onrender.com/auth", "https://ai-image-generator-z95d.onrender.com"],
   credentials: true,
   methods: ['GET', 'PUT', 'POST', 'DELETE', 'HEAD'],
 };
@@ -31,10 +31,10 @@ app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: Date.now() + 1000 * 60 * 60 * 24 * 30, secure: true, sameSite: "none"}
+    cookie: { maxAge: Date.now() + 1000 * 60 * 60 * 24 * 30}
 }))
 
-app.set("trust proxy", 1);
+
 
 app.use(passport.initialize());
 app.use(passport.session());
