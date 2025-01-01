@@ -22,21 +22,24 @@ const Feed = () => {
  
     const [isLoading, setIsLoading] = useState(false)
     
-    useEffect(() => {
-      setTimeout(() => {
-        fetchAllImages()
-      }, 500)
-    }, [])
+    // useEffect(() => {
+    //   setTimeout(() => {
+    //     fetchAllImages()
+    //   }, 500)
+    // }, [])
+
+    const fetchImages = async () => {
+      await fetchAllImages()
+    }
 
     useEffect(() => {
       setIsLoading(true)
+      fetchImages()
       setTimeout(() => {
         setIsLoading(false)
-      }, 1000)
+      }, 2000)
     }, [])
 
-  
-    
     return (
      
   <div className={`md:w-[90%] min-h-[100vh] px-5`}>
