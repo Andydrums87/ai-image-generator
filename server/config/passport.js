@@ -50,7 +50,7 @@ passport.use(
                                 googleId: profile.id,
                                 name: profile.displayName,
                                 email: profile?.emails,
-                                avatar: profile?.photos
+                                avatar: profile.photos ? profile.photos[0].value : ""
                             }).save().then(user => done(null, user))
                         }
                     });
