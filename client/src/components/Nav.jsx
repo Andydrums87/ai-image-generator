@@ -80,7 +80,7 @@ const Nav = ({ nav, handleNav }) => {
                
                 <a className="h-full w-full rounded-md 
                 text-xs flex 
-                items-center justify-center w-[80%] mt-10"  href="https://server.ai-image-project.com/auth/google/callback"><img 
+                items-center justify-center w-[80%] mt-10"  href="/"><img 
                 src={Logout} 
                 alt="logout btn" 
                 /></a>
@@ -166,7 +166,7 @@ const Nav = ({ nav, handleNav }) => {
                 className="h-full mt-20 w-full rounded-md 
                 text-xs py-3 pl-2 flex 
                 items-center w-[80%] gap-2 text-white" 
-                href="https://server.ai-image-project.com/auth/google/callback"> 
+                href="/"> 
                 <img 
                 src={Logout} 
                 alt="logout btn" 
