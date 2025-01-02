@@ -28,7 +28,7 @@ const Home = () => {
                 <form action="https://server.ai-image-project.com/auth/google/callback">
                     <button 
                     id="1"
-                    onClick={() => handleButtonClick(e)}
+                    onClick={(e) => handleButtonClick(e)}
                     type="submit" 
                     className={`
                         ${loading 
