@@ -20,6 +20,23 @@ router.get('/google/callback',
         res.redirect('https://www.ai-image-project.com/create')
     }
 )
+
+router.get("/facebook", passport.authenticate("facebook", {
+    scope: ["profile", "email"]
+  }));
+
+  router.get('/facebook/callback',
+    passport.authenticate('facebook', { failureRedirect: '/'}), 
+    (req, res) => {
+        const { email } = req.body
+        const user = User.findOne({ email })
+        if(!user) return res.sendStatus(401)
+            req.user = user;
+        console.log(user)
+        res.redirect('https://www.ai-image-project.com/create')
+    }
+)
+
 router.get("/login/sucess", async(req,res)=>{
     if(req.user){
         res.status(200).json({ isLoggedIn: true, user:req.user})
