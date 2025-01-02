@@ -49,8 +49,8 @@ passport.use(
                             new User({ 
                                 googleId: profile.id,
                                 name: profile.displayName,
-                                email: profile.emails[0].value || "",
-                                avatar: profile.photos[0] || "",
+                                email: profile?.emails,
+                                avatar: profile?.photos
                             }).save().then(user => done(null, user))
                         }
                     });
