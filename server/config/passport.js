@@ -34,7 +34,7 @@ passport.use(
         passport.use(
             new FacebookStrategy(
                 {
-                    clientID: process.env.FACEBOOK_APP_ID,
+                    clientID: process.env.FACEBOOK_CLIENT_ID,
                     clientSecret: process.env.FACEBOOK_APP_SECRET,
                     callbackURL: process.env.FACEBOOK_CALLBACK,
                     profileFields: ['id', 'displayName', 'photos', 'emails', 'name']
