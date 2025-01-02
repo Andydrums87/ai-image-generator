@@ -19,8 +19,8 @@ const corsOptions = {
     "http://localhost:8080/auth", 
     "https://ai-image-generator-backend-wew8.onrender.com/auth", 
     "https://ai-image-generator-z95d.onrender.com",
-    "https://www.server.ai-image-project.com",
-    "https://www.server.ai-image-project.com/auth/google/callback"
+    "https://server.ai-image-project.com",
+    "https://server.ai-image-project.com/auth/google/callback"
   ],
   credentials: true,
   methods: ['GET', 'PUT', 'POST', 'DELETE', 'HEAD'],
