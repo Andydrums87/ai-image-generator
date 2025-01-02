@@ -12,18 +12,10 @@ const app = express();
 
 const corsOptions = {
   origin: ['http://localhost:5173', 
-    'http://192.168.0.9:5173', "http://192.168.0.9:8080", 
-    "http://localhost:8080", "http://localhost:8080/auth/google/callback", 
+    "http://localhost:8080", 
     "https://ai-image-generator-backend-wew8.onrender.com", 
-    "https://ai-image-generator-backend-wew8.onrender.com/auth/google/callback", 
-    "http://localhost:8080/auth", 
-    "https://ai-image-generator-backend-wew8.onrender.com/auth", 
-    "https://ai-image-generator-z95d.onrender.com",
     "https://www.ai-image-project.com", 
     "https://server.ai-image-project.com",
-    "https://server.ai-image-project.com/auth/google/callback",
-    "https://server.ai-image-project.com/auth/login/sucess"
-
   ],
   credentials: true,
   methods: ['GET', 'PUT', 'POST', 'DELETE', 'HEAD'],
