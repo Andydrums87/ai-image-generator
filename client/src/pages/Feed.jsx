@@ -19,25 +19,24 @@ const Feed = () => {
     const images = imageStore((state) => state.allImages)
     const total = imageStore((state) => state.total)
     const loading = imageStore((state) => state.loading)
+    const isOpen = imageStore((state) => state.isOpen)
  
     const [isLoading, setIsLoading] = useState(false)
-    
-    // useEffect(() => {
-    //   setTimeout(() => {
-    //     fetchAllImages()
-    //   }, 500)
-    // }, [])
-
-    const fetchImages = async () => {
-      await fetchAllImages()
-    }
 
     useEffect(() => {
-      setIsLoading(true)
-      fetchImages()
+      document.body.style.overflow = isOpen ? "hidden" : "unset"
+    }, [isOpen])
+    
+    useEffect(() => {
+      const fetchImages = async () => {
+        setIsLoading(true)
+      await fetchAllImages()
       setTimeout(() => {
         setIsLoading(false)
       }, 2000)
+      }
+      fetchImages()
+      // setIsLoading(false)
     }, [])
 
     return (
