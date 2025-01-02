@@ -17,7 +17,7 @@ router.get('/google/callback',
             req.user = user;
         
         console.log(user)
-        res.redirect('https://ai-image-generator-z95d.onrender.com/create')
+        res.redirect('https://www.ai-image-project.com/create')
     }
 )
 router.get("/login/sucess", async(req,res)=>{
