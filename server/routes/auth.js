@@ -30,9 +30,10 @@ router.get("/facebook", passport.authenticate("facebook", {
     (req, res) => {
         const { email } = req.body
         const user = User.findOne({ email })
+        console.log(user)
         if(!user) return res.sendStatus(401)
             req.user = user;
-        console.log(user)
+        
         res.redirect('https://www.ai-image-project.com/create')
     }
 )
