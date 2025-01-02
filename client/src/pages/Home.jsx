@@ -7,11 +7,14 @@ import LoadingSpinner from "../components/LoadingSpinner";
 const Home = () => {
 
     const [loading, setLoading] = useState(false)
+  
+    
 
-    const handleButtonClick = async () => {
-        setLoading(true);
+
+    const handleButtonClick = async (e) => {
+        setLoading(true)
         setTimeout(() => {
-            setLoading(false);
+          setLoading(false)
         }, 3000);
       }
 
@@ -24,7 +27,8 @@ const Home = () => {
                <h2 className="text-white-100">Sign in to continue</h2>
                 <form action="https://server.ai-image-project.com/auth/google/callback">
                     <button 
-                    onClick={handleButtonClick}
+                    id="1"
+                    onClick={() => handleButtonClick(e)}
                     type="submit" 
                     className={`
                         ${loading 
@@ -48,7 +52,8 @@ const Home = () => {
             <p className="text-white text-sm">or</p>
             <form action="https://server.ai-image-project.com/auth/facebook/callback">
                     <button 
-                    onClick={handleButtonClick}
+                    id="2"
+                    onClick={(e) => handleButtonClick(e)}
                     type="submit" 
                     className={`
                         ${loading 
