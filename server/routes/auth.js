@@ -22,7 +22,7 @@ router.get('/google/callback',
 )
 
 router.get("/facebook", passport.authenticate("facebook", {
-    scope: ["profile", "email"]
+    scope: [ "email" ]
   }));
 
   router.get('/facebook/callback',

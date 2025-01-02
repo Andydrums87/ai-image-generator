@@ -49,7 +49,7 @@ passport.use(
                             new User({ 
                                 googleId: profile.id,
                                 name: profile.displayName,
-                                email: profile.emails,
+                                email: profile.email,
                                 avatar: profile.photos,
                             }).save().then(user => done(null, user))
                         }
