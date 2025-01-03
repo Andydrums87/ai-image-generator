@@ -12,9 +12,10 @@ const AuthButtons = () => {
     const handleButtonClick = authStore((state) => state.handleButtonClick)
 
     return (
-        <div className="flex flex-col gap-5">
-             {signInButtons.map((btn, i) => (
-            <form key={i} action={btn.url}>
+      <>
+        {signInButtons.map((btn, i) => (
+            <div key={i} className="focus:opacity-40 cursor-not-allowed mb-10">
+            <form action={btn.url}>
             <button 
             id={btn.id}
             type="submit" 
@@ -28,8 +29,11 @@ const AuthButtons = () => {
             {btn.text}
             </button>
             </form>
+            </div>
         ))}
-        </div>
+      </>
+           
+      
    
       
     )
