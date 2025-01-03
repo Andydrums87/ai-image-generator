@@ -33,8 +33,7 @@ const Nav = ({ nav, handleNav }) => {
             await handleLogout()
             reset()
             resetAuth()
-            navigate("/collections")
-            toast.success("Logged out")
+            navigate("/")
             setLoading(false)
             }
 

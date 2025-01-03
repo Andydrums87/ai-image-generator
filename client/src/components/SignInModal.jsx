@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import authStore from "../stores/authStore";
 import CloseButton from "./CloseButton";
 import GoogleButton from "./GoogleButton";
@@ -8,6 +8,7 @@ const SignInModal = () => {
 
     const isOpen = authStore((state) => state.isOpen)
     const handleClose = authStore((state) => state.handleClose)
+ 
 
     return (
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import imageStore from "../stores/imageStore";
+import authStore from "../stores/authStore";
 import Search from "../components/Search";
 import Modal from "../components/Modal";
 import Scroll from "../components/Scroll";
@@ -12,8 +13,6 @@ import Empty from "../components/Empty";
 import SignInModal from "../components/SignInModal";
 
 
-
-
 const Feed = () => {
 
     const fetchAllImages = imageStore((state) => state.fetchAllImages)
@@ -22,12 +21,19 @@ const Feed = () => {
     const total = imageStore((state) => state.total)
     const loading = imageStore((state) => state.loading)
     const isOpen = imageStore((state) => state.isOpen)
+    const authOpen = authStore((state) => state.isOpen)
  
     const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
-      document.body.style.overflow = isOpen ? "hidden" : "unset"
-
+      document.body.style.overflow = 
+      isOpen 
+      ? "hidden" 
+      : "unset" 
+      ||
+       authOpen 
+       ? "hidden" 
+       : "unset"
     }, [isOpen])
     
     useEffect(() => {
