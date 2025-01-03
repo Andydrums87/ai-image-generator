@@ -5,6 +5,7 @@ import { styles } from "../styles";
 import authStore from "../stores/authStore";
 
 
+
 const GoogleButton = () => {
 
     const loading = authStore((state) => state.loading)
@@ -18,7 +19,7 @@ const GoogleButton = () => {
         type="submit" 
         className={`
             ${loading 
-                && "opacity-40 cursor-not-allowed w-[100%]"} 
+                && "opacity-40 cursor-not-allowed px-40"} 
         ${styles.loginButton}`}>
         <img 
         className={`${loading ? "hidden" : "block"} bg-white rounded-full px-1 py-1`}

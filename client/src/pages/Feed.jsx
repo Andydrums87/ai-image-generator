@@ -12,6 +12,8 @@ import Empty from "../components/Empty";
 import SignInModal from "../components/SignInModal";
 
 
+
+
 const Feed = () => {
 
     const fetchAllImages = imageStore((state) => state.fetchAllImages)
@@ -25,6 +27,7 @@ const Feed = () => {
 
     useEffect(() => {
       document.body.style.overflow = isOpen ? "hidden" : "unset"
+
     }, [isOpen])
     
     useEffect(() => {
@@ -36,12 +39,13 @@ const Feed = () => {
       }, 2000)
       }
       fetchImages()
+      // setIsLoading(false)
     }, [])
 
     return (
      
   <div className={`md:w-[90%] min-h-[100vh] px-5`}>
-  <SignInModal />
+ 
     {isLoading 
     ? 
     <SkeletonCard amount={8} /> 
@@ -51,7 +55,7 @@ const Feed = () => {
  
             <Toast />
             <Search />
-           
+            <SignInModal />
             <Modal />
             {images?.length === 0 && <Empty message={"No Images Found"} />}
             <Scroll 

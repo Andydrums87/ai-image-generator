@@ -21,6 +21,7 @@ const Nav = ({ nav, handleNav }) => {
 
     const handleLogout = authStore((state) => state.handleLogout)
     const reset = imageStore((state) => state.initialState)
+    const resetAuth = authStore((state) => state.initialState)
     const user = authStore((state) => state.user)
     const isLoggedIn= authStore((state) => state.isLoggedIn)
     const navigate = useNavigate()
@@ -31,6 +32,7 @@ const Nav = ({ nav, handleNav }) => {
             setLoading(true)
             await handleLogout()
             reset()
+            resetAuth()
             navigate("/collections")
             toast.success("Logged out")
             setLoading(false)

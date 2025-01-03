@@ -43,7 +43,7 @@ export const authStore = create(
                     console.log(err)
                 }
         },
-        initialState:  async () => { set({ user: null }); set({ isLoading: false }) },
+        initialState:  async () => { set({ user: null }); set({ loading: false }) },
         handleOpen: async ()=> { set({ isOpen: true })},
         handleClose: async () => { set ({ isOpen: false })}, 
         handleButtonClick: async () => { 
