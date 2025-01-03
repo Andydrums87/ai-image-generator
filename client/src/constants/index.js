@@ -18,8 +18,8 @@ const navItems = [
   ];
 
   const signInButtons = [
-    {id: 1, image: Google, url: "https://server.ai-image-project.com/auth/google/callback", alt: "Google", text: "Sign In with Google"},
-    {id: 2, image: Facebook, url: "https://server.ai-image-project.com/auth/facebook/callback", alt: "Facebook", text: "Sign In with Facebook"},
+    {id: 0, image: Google, url: "https://server.ai-image-project.com/auth/google/callback", alt: "Google", text: "Sign In with Google"},
+    {id: 1, image: Facebook, url: "https://server.ai-image-project.com/auth/facebook/callback", alt: "Facebook", text: "Sign In with Facebook"},
   ]
 
   const resolutions = ["1024x1024", "1792x1024", "1024x1792"]
