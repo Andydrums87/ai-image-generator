@@ -11,13 +11,12 @@ export const authStore = create(
         isOpen: false,
         loading: false,
         setUser: async () => {
-          
             mainURL.get(`/auth/login/sucess`, {withCredentials: true})
             .then(response => {
             const data = response.data.user
                set({ data })
                set({ user: data })
-               
+               set({ isOpen: false})
             })
             .catch(err => console.log(err))
         },

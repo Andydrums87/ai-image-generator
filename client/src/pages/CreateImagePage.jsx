@@ -1,7 +1,7 @@
 import React from "react";
 import GeneratedImage from "../components/GeneratedImage"
 import Form from "../components/Form"
-import authStore from "../stores/authStore";
+
 
 
 const CreateImagePage = () => {

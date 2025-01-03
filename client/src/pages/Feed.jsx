@@ -21,7 +21,7 @@ const Feed = () => {
     const total = imageStore((state) => state.total)
     const loading = imageStore((state) => state.loading)
     const isOpen = imageStore((state) => state.isOpen)
-    const authOpen = authStore((state) => state.isOpen)
+
  
     const [isLoading, setIsLoading] = useState(false)
 
@@ -30,10 +30,6 @@ const Feed = () => {
       isOpen 
       ? "hidden" 
       : "unset" 
-      ||
-       authOpen 
-       ? "hidden" 
-       : "unset"
     }, [isOpen])
     
     useEffect(() => {
