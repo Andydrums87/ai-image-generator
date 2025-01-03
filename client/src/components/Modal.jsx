@@ -17,6 +17,7 @@ const Modal = ({id, img }) => {
  
     return (
         <>
+  
             <div className="flex justify-center">
             {isOpen === true ? 
             <div className="text-white bg-primary 
@@ -25,8 +26,9 @@ const Modal = ({id, img }) => {
             justify-content items-center gap-5 rounded-lg">
               
                  {loading ? <SkeletonModal /> : 
+                 
                  <>
-             
+                    
                  <AsyncImage 
                  id={selectedImage?.image?._id || id}
                  src={selectedImage?.image?.imageUrl || img?.imageUrl}  
@@ -51,16 +53,15 @@ const Modal = ({id, img }) => {
                    {selectedImage?.image?.style || undefined }
                    </li>
                    <li>
+                   <CloseButton handleClose={handleClose}/>
                    <Download img={selectedImage?.image?.imageUrl}/>
                    </li>
                 </ul>
-               
+            
                  </>
                   }  
-             
-           <button className="absolute top-0 right-10" onClick={handleClose}>
-               <CloseButton />
-           </button>
+               
+            
         </div>
 
            :

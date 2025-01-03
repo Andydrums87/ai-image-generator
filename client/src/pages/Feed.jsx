@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import imageStore from "../stores/imageStore";
-import authStore from "../stores/authStore";
 import Search from "../components/Search";
 import Modal from "../components/Modal";
 import Scroll from "../components/Scroll";

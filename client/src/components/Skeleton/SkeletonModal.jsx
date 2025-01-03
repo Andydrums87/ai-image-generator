@@ -13,6 +13,7 @@ const SkeletonModal = () => {
         md:left-40 w-[90%] md:w-[75%] p-5 flex flex-col md:flex-row
           rounded-lg">
              <div className="w-full animate-pulse mr-2">
+             <CloseButton handleClose={handleClose} />
             <img src={ImagePlaceholder} alt="image placeholder" className="bg-grey-black w-full h-[200px] md:h-[400px] rounded-md" />
             </div>
             <div className="w-full text-left flex-col flex mt-5">
@@ -38,9 +39,7 @@ const SkeletonModal = () => {
                 py-5 px-15 rounded-lg"></button>
            </div>
               
-           <button className="absolute top-0 right-10" onClick={handleClose}>
-               <CloseButton />
-           </button>
+         
         </div>
 
     )

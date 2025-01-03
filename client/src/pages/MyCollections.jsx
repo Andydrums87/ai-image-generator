@@ -11,7 +11,6 @@ const MyCollections = () => {
     const fetchCollections = imageStore((state) => state.fetchCollections)
     const collections = imageStore((state) => state.collections)
   
-
     useEffect(() => {
        fetchCollections()
       }, [])

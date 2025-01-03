@@ -9,9 +9,7 @@ const SignInModal = () => {
     const isOpen = authStore((state) => state.isOpen)
     const handleClose = authStore((state) => state.handleClose)
  
-
     return (
-
         <div className={`${ 
             isOpen === true 
             ? 
@@ -21,10 +19,8 @@ const SignInModal = () => {
             }`}>
             <h2 className="font-bold">Sign In</h2>
             <p className="flex-1">Please sign in to access all feature</p>
-            <button className="absolute top-0 right-10" onClick={handleClose}>
-               <CloseButton />
-           </button>
            <>
+           <CloseButton handleClose={handleClose} />
            <GoogleButton />
            <FacebookButton />
            </>
