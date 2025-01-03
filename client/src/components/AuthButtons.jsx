@@ -14,7 +14,7 @@ const AuthButtons = () => {
     return (
       <>
         {signInButtons.map((btn, i) => (
-            <div key={i} className="mb-5">
+            <div key={i} className="mb-5" tabIndex={0}>
             <form action={btn.url}>
             <button 
             id={btn.id}
