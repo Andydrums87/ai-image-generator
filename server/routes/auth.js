@@ -17,7 +17,7 @@ router.get('/google/callback',
             req.user = user;
         
         console.log(user)
-        res.redirect('https://www.ai-image-project.com/create')
+        res.redirect('https://www.ai-image-project.com/collections')
     }
 )
 
