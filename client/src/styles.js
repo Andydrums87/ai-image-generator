@@ -8,7 +8,7 @@ const styles = {
     imageBorder: 
     "border-grey-black border-4 border-solid rounded-md",
     loginButton: 
-    "flex items-center justify-center gap-5 text-white-100 bg-violet-100 px-10 w-[100%] rounded-lg py-4",
+    "flex items-center justify-center gap-5 text-white-100 bg-violet-100 px-20 w-[100%] rounded-lg py-4",
     signInButton: 
     "h-full mt-20 w-full rounded-md bg-grey-black text-xs py-2 pl-2 flex items-center w-[80%] gap-2 text-white",
     activeLink: 

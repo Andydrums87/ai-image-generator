@@ -22,7 +22,6 @@ const Feed = () => {
     const loading = imageStore((state) => state.loading)
     const isOpen = imageStore((state) => state.isOpen)
 
- 
     const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
@@ -41,7 +40,6 @@ const Feed = () => {
       }, 2000)
       }
       fetchImages()
-      // setIsLoading(false)
     }, [])
 
     return (

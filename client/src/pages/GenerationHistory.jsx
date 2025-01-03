@@ -15,7 +15,6 @@ const GenerationHistory = () => {
     const fetchMoreImages = imageStore((state) => state.fetchMoreUserImages)
     const total = imageStore((state) => state.total)
 
-
     useEffect(()=> {
         fetchImages()
     }, [])
@@ -24,7 +23,6 @@ const GenerationHistory = () => {
     
     return (
      <div className="md:flex min-h-[100vh]">
-        
      <div className="w-full h-full px-10">
        <h1 className="text-white-100 mb-8">Generation History</h1>
        <Modal />

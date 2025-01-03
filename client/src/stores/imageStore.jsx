@@ -224,7 +224,6 @@ export const imageStore = create(
       fetchCollections: async () => {
         set({ loading: true })
         const auth = authStore.getState().data._id
-      
         await mainURL.get(`/api/collections/${auth}`)
         .then((res) => {
             const data = res.data.collection

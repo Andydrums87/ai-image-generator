@@ -19,7 +19,7 @@ const GoogleButton = () => {
         type="submit" 
         className={`
             ${loading 
-                && "opacity-40 cursor-not-allowed px-40"} 
+                && "opacity-40 cursor-not-allowed"} 
         ${styles.loginButton}`}>
         <img 
         className={`${loading ? "hidden" : "block"} bg-white rounded-full px-1 py-1`}
