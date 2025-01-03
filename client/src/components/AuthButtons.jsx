@@ -17,7 +17,7 @@ const AuthButtons = () => {
             <form key={i} action={btn.url}>
             <button 
             id={btn.id}
-            onClick={() => handleButtonClick(id)}
+            onClick={() => handleButtonClick(e, id)}
             type="submit" 
             className={`
                 ${loading 
