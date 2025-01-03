@@ -9,6 +9,7 @@ export const authStore = create(
         isLoggedIn: false,
         user: null,
         isLoading: false,
+        isOpen: false,
         setUser: async () => {
             mainURL.get(`/auth/login/sucess`, {withCredentials: true})
             .then(response => {
@@ -41,6 +42,8 @@ export const authStore = create(
                 }
         },
         initialState:  async () => { set({ user: null }); set({ isLoading: false }) },
+        handleOpen: async ()=> { set({ isOpen: true })},
+        handleClose: async () => { set ({ isOpen: false })}, 
      
     }),
     

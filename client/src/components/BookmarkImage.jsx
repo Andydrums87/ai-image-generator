@@ -5,6 +5,7 @@ import imageStore from "../stores/imageStore";
 import authStore from "../stores/authStore";
 import { toast } from "react-toastify";
 
+
 const BookmarkImage = ({ img, id }) => {
 
     const images = imageStore((state) => state.allImages)
@@ -12,6 +13,7 @@ const BookmarkImage = ({ img, id }) => {
     const addImage = imageStore((state) => state.addImage)
     const deleteImage = imageStore((state) => state.deleteImage)
     const isLoggedIn = authStore((state) => state.isLoggedIn)
+    const handleOpen = authStore((state) => state.handleOpen)
 
     const [isBookmarked, setBookmarked] = useState(false)
     const [collectionId, setCollectionId] = useState([])
@@ -26,7 +28,7 @@ const BookmarkImage = ({ img, id }) => {
     const bookmark = async (e) => {
         setLoading(true)
         if(!isLoggedIn) {
-            toast.success("please sign in")
+            handleOpen()
             setLoading(false)
             return
         }
@@ -39,7 +41,7 @@ const BookmarkImage = ({ img, id }) => {
   const unBookmark = async (e) => {
     setLoading(true)
     if(!isLoggedIn) {
-        toast.success("please sign in")
+        handleOpen()
         setLoading(false)
         return
     }

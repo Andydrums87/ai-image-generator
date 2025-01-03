@@ -15,6 +15,7 @@ const GenerationHistory = () => {
     const fetchMoreImages = imageStore((state) => state.fetchMoreUserImages)
     const total = imageStore((state) => state.total)
 
+
     useEffect(()=> {
         fetchImages()
     }, [])

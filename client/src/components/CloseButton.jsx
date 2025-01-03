@@ -5,7 +5,7 @@ const CloseButton = () => {
     return (
         <img src={Close} 
         alt="close" 
-        className="p-1 mb-10 bg-grey-black 
+        className="p-1 mb-10 bg-grey-100
         rounded-md mt-4 cursor-pointer 
         fixed pointer-events-auto" 
         />

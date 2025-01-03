@@ -9,7 +9,7 @@ import ImageCard from "../components/ImageCard";
 import LoadingSpinner from "../components/LoadingSpinner";
 import SkeletonCard from "../components/Skeleton/SkeletonCard";
 import Empty from "../components/Empty";
-
+import SignInModal from "../components/SignInModal";
 
 
 const Feed = () => {
@@ -36,20 +36,22 @@ const Feed = () => {
       }, 2000)
       }
       fetchImages()
-      // setIsLoading(false)
     }, [])
 
     return (
      
   <div className={`md:w-[90%] min-h-[100vh] px-5`}>
+  <SignInModal />
     {isLoading 
     ? 
     <SkeletonCard amount={8} /> 
     : 
         <div id="scrollable">
           <>
+ 
             <Toast />
             <Search />
+           
             <Modal />
             {images?.length === 0 && <Empty message={"No Images Found"} />}
             <Scroll 

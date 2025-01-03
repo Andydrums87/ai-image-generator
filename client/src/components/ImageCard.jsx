@@ -3,16 +3,18 @@ import Image from "./Image";
 import UserInfo from "./UserInfo";
 import imageStore from "../stores/imageStore";
 import BookmarkImage from "./BookmarkImage";
+import authStore from "../stores/authStore";
 
 
 const ImageCard = ({ img, index, id }) => {
 
     const isOpen = imageStore((state) => state.isOpen)
+    const authIsOpen = authStore((state) => state.isOpen)
 
     return (
         <>
         <div className={`${
-            isOpen 
+            isOpen || authIsOpen
             ? "blur-sm" 
             : "blur-none" } 
             inline-block w-full h-full relative"
