@@ -34,7 +34,7 @@ router.get("/facebook", passport.authenticate("facebook", {
         if(!user) return res.sendStatus(401)
             req.user = user;
         
-        res.redirect('https://www.ai-image-project.com/create')
+        res.redirect('https://www.ai-image-project.com/collections')
     }
 )
 
