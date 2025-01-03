@@ -10,10 +10,11 @@ const SignInModal = () => {
     const handleClose = authStore((state) => state.handleClose)
 
     return (
+
         <div className={`${ 
             isOpen === true 
             ? 
-            "fixed top-[25%] md:w-[50%] md:left-[25%] w-[91%] flex flex-col gap-3 z-20 h-[40%] text-white-100 text-sm bg-grey-black rounded-lg p-5" 
+            "fixed top-[25%] md:w-[50%] md:left-[25%] w-[91%] flex flex-col gap-3 z-20 h-[40%] md:h-[50%] text-white-100 text-sm bg-grey-black rounded-lg p-5" 
             : 
             "hidden" 
             }`}>
