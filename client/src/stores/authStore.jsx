@@ -8,19 +8,21 @@ export const authStore = create(
     (set, get) => ({
         isLoggedIn: false,
         user: null,
-        isLoading: false,
         isOpen: false,
+        loading: false,
         setUser: async () => {
+          
             mainURL.get(`/auth/login/sucess`, {withCredentials: true})
             .then(response => {
             const data = response.data.user
                set({ data })
                set({ user: data })
-            
+               
             })
             .catch(err => console.log(err))
         },
         checkAuth: async () => {
+            
             try {
                const res = await mainURL.get('/auth/check', { withCredentials: true });
                if(res.data.isLoggedIn === true) {
@@ -44,7 +46,12 @@ export const authStore = create(
         initialState:  async () => { set({ user: null }); set({ isLoading: false }) },
         handleOpen: async ()=> { set({ isOpen: true })},
         handleClose: async () => { set ({ isOpen: false })}, 
-     
+        handleButtonClick: async () => { 
+            set({loading: true})
+            setTimeout(() => {
+                set({ loading: false})
+            }, 3000)
+        }
     }),
     
     {

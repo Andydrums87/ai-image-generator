@@ -2,13 +2,19 @@ import React from "react";
 import Facebook from "../assets/facebook-round-color-icon.svg"
 import LoadingSpinner from "../components/LoadingSpinner";
 import { styles } from "../styles";
+import authStore from "../stores/authStore";
 
-const FacebookButton = ({ handleButtonClick, loading}) => {
+const FacebookButton = () => {
+
+
+    const loading = authStore((state) => state.loading)
+    const handleButtonClick = authStore((state) => state.handleButtonClick)
+
     return (
         <form action="https://server.ai-image-project.com/auth/facebook/callback">
         <button 
         id="2"
-        onClick={(e) => handleButtonClick(e)}
+        onClick={handleButtonClick}
         type="submit" 
         className={`
             ${loading 
