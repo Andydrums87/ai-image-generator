@@ -4,7 +4,7 @@ import Moon from "../assets/Time_atack_duotone.svg"
 import Apps from "../assets/apps.svg"
 
 import Google from "../assets/google-color.svg"
-import Facebook from "../assets/facebook-round-color-icon.svg"
+import Facebook from "../assets/facebookicon.png"
 
 const colors = ["#DD524C", "#4E80EE", "green", "#E87B35", "#7C71FF", "#E4E4E7"]
 
