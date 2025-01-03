@@ -3,6 +3,9 @@ import Folders from "../assets/Folder_duotone_fill.svg"
 import Moon from "../assets/Time_atack_duotone.svg"
 import Apps from "../assets/apps.svg"
 
+import Google from "../assets/google-color.svg"
+import Facebook from "../assets/facebook-round-color-icon.svg"
+
 const colors = ["#DD524C", "#4E80EE", "green", "#E87B35", "#7C71FF", "#E4E4E7"]
 
 const navItems = [
@@ -13,6 +16,11 @@ const navItems = [
     { id: 4, image: Folders, to: "/collections", text: "My Collections" },
   
   ];
+
+  const signInButtons = [
+    {id: 1, image: Google, url: "https://server.ai-image-project.com/auth/google/callback", alt: "Google", text: "Sign In with Google"},
+    {id: 2, image: Facebook, url: "https://server.ai-image-project.com/auth/facebook/callback", alt: "Facebook", text: "Sign In with Facebook"},
+  ]
 
   const resolutions = ["1024x1024", "1792x1024", "1024x1792"]
 
@@ -98,4 +106,4 @@ const navItems = [
     "crying bears with ties pushing a horse cart with square wheels, by Johannes Vermeer",
 ]
 
-export { colors, navItems, resolutions, quality, randomPrompts };
+export { colors, navItems, resolutions, quality, randomPrompts, signInButtons };

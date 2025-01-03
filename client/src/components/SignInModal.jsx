@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import authStore from "../stores/authStore";
 import CloseButton from "./CloseButton";
-import GoogleButton from "./GoogleButton";
-import FacebookButton from "./FacebookButton";
+import AuthButtons from "./AuthButtons";
 
 const SignInModal = () => {
 
@@ -21,8 +20,7 @@ const SignInModal = () => {
             <p className="flex-1">Please sign in to access all feature</p>
            <>
            <CloseButton handleClose={handleClose} />
-           <GoogleButton />
-           <FacebookButton />
+           <AuthButtons />
            </>
          
         </div>

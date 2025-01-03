@@ -45,11 +45,14 @@ export const authStore = create(
         initialState:  async () => { set({ user: null }); set({ loading: false }) },
         handleOpen: async ()=> { set({ isOpen: true })},
         handleClose: async () => { set ({ isOpen: false })}, 
-        handleButtonClick: async () => { 
-            set({loading: true})
+        handleButtonClick: async (e, id) => { 
+            if(e.target.id === id) {
+                set({loading: true})
             setTimeout(() => {
                 set({ loading: false})
             }, 3000)
+            }
+            
         }
     }),
     
