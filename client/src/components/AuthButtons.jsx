@@ -17,25 +17,17 @@ const AuthButtons = () => {
             <form key={i} action={btn.url}>
             <button 
             id={btn.id}
-            onClick={() => handleButtonClick(e, id)}
             type="submit" 
             className={`
-                ${loading 
-                    && "opacity-40 cursor-not-allowed px-40"} 
             ${styles.loginButton}`}>
             <img 
-            className={`${loading ? "hidden" : "block"} max-h-[25px] bg-white rounded-full px-1 py-1`}
+            className="max-h-[25px] bg-white rounded-full px-1 py-1"
             src={btn.image} 
             alt={btn.alt}>
             </img>
-    
-    
-        { loading
-        ? <LoadingSpinner />
-        :  <p>{btn.text}</p>
-        }
-        </button>
-    </form>
+            {btn.text}
+            </button>
+            </form>
         ))}
         </div>
    
@@ -44,3 +36,11 @@ const AuthButtons = () => {
 }
 
 export default AuthButtons;
+// ${!loading ? "hidden" : "block"}
+// ${!loading 
+//     && "opacity-40 cursor-not-allowed px-40"} 
+
+    {/* { !loading
+        ? <LoadingSpinner />
+        :  <p>{btn.text}</p>
+        } */}
