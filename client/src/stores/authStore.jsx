@@ -21,11 +21,11 @@ export const authStore = create(
             .catch(err => console.log(err))
         },
         checkAuth: async () => {
-            
             try {
                const res = await mainURL.get('/auth/check', { withCredentials: true });
                if(res.data.isLoggedIn === true) {
                 set({ isLoggedIn: true })
+                set({ loading: false })
                }
             } catch (err) {
                 set({ isLoggedIn: false})
