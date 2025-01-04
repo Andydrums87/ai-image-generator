@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import './App.css'
 import "./index.css"
 import CreateImagePage from "./pages/CreateImagePage"
-import Home from "./pages/Home"
+import Login from "./pages/Login"
 import MyCollections from './pages/MyCollections'
 import GenerationHistory from './pages/GenerationHistory'
 import Nav from "./components/Nav"
@@ -48,8 +48,8 @@ const handleNav = () => {
               : "" }
               pt-20 md:py-10 md:px-3 w-[100%] md:ml-20 min-h-screen`}>
      <Routes>
-        <Route path="/" element={ <Home /> }/>
-        <Route path="/create" element={ <CreateImagePage /> }/>
+        <Route path="/" element={ <CreateImagePage /> }/>
+        <Route path="/login" element={ <Login /> }/>
         <Route path="/feed" element={ <Feed /> }/>
         <Route path="/collections" element={ 
             <ProtectedRoutes>

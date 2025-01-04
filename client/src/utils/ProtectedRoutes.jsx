@@ -1,6 +1,6 @@
 import authStore from "../stores/authStore"
 import { useEffect } from "react"
-import Home from "../pages/Home"
+import Login from "../pages/Login"
 
 
 export default function ProtectedRoutes(props) {
@@ -15,7 +15,7 @@ export default function ProtectedRoutes(props) {
     }, [])
 
     if(isLoggedIn === false) {
-        return <Home />
+        return <Login />
     }
 
     return <div>{props.children}</div>
