@@ -19,11 +19,11 @@ const AuthButtons = () => {
             <form key={index} action={btn.url}>
             <button 
             id={btn.id}
-            onClick={() => {handleSelectBtn(i)}}
+            onClick={() => {handleSelectBtn(index)}}
             type="submit" 
             className={`${index === selectedBtn ? "opacity-40 bg-violet-100 cursor-not-allowed" : "bg-violet-100"} flex text-xs items-center justify-center mb-5 max-h-[55px] gap-5 text-white-100 w-[100%] md:px-0 px-20 rounded-lg py-4`}>
             <img 
-            className="max-h-[25px] bg-white rounded-full px-1 py-1"
+            className={`${ index === selectedBtn ? "hidden" : "block"} max-h-[25px] bg-white rounded-full px-1 py-1`}
             src={btn.image} 
             alt={btn.alt}>
             </img>

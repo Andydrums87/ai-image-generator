@@ -49,6 +49,7 @@ const handleNav = () => {
               pt-20 md:py-10 md:px-3 w-[100%] md:ml-20 min-h-screen`}>
      <Routes>
         <Route path="/" element={ <CreateImagePage /> }/>
+        <Route path="/create" element={ <CreateImagePage /> }/>
         <Route path="/login" element={ <Login /> }/>
         <Route path="/feed" element={ <Feed /> }/>
         <Route path="/collections" element={ 

@@ -33,7 +33,7 @@ const Nav = ({ nav, handleNav }) => {
             await handleLogout()
             reset()
             resetAuth()
-            navigate("/")
+            navigate("/feed")
             setLoading(false)
             }
 

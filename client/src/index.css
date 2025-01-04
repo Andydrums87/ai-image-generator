@@ -9,9 +9,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
+
     /* scroll-behavior: smooth; */
     /* background-color:#121826; */
-    
+  }
+
+  body {
+    background-color: #121826;
   }
 
   input:checked + label {
