@@ -81,7 +81,7 @@ const Nav = ({ nav, handleNav }) => {
                
                 <a className="h-full w-full rounded-md 
                 text-xs flex 
-                items-center justify-center w-[80%] mt-10"  href="/"><img 
+                items-center justify-center w-[80%] mt-10"  href="/login"><img 
                 src={Logout} 
                 alt="logout btn" 
                 /></a>
@@ -163,7 +163,7 @@ const Nav = ({ nav, handleNav }) => {
 
                 <a 
                 className={`${styles.signInButton}`} 
-                href="/"> 
+                href="/login"> 
                 <img 
                 src={Logout} 
                 alt="logout btn" 
