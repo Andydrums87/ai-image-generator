@@ -18,8 +18,12 @@ function App() {
   const checkAuth = authStore((state) => state.checkAuth)
   const isOpen = imageStore((state) => state.isOpen)
   const setUser = authStore((state) => state.setUser)
+  const user = authStore((state) => state.user)
 
   useEffect(() => {
+    if(user) {
+      return 
+    }
     setUser()
   }, [])
 

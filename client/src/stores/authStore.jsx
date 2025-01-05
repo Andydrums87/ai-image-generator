@@ -11,7 +11,7 @@ export const authStore = create(
         isOpen: false,
         loading: false,
         setUser: async () => {
-            mainURL.get(`/auth/login/sucess`, {withCredentials: true})
+            mainURL.get(`/auth/login/sucess`)
             .then(response => {
             const data = response.data.user
                set({ data })
@@ -22,7 +22,7 @@ export const authStore = create(
         },
         checkAuth: async () => {
             try {
-               const res = await mainURL.get('/auth/check', { withCredentials: true });
+               const res = await mainURL.get('/auth/check');
                if(res.data.isLoggedIn === true) {
                 set({ isLoggedIn: true })
                 set({ loading: false })
@@ -33,7 +33,7 @@ export const authStore = create(
         },
         handleLogout: async (e) => {
                 try {
-                    await mainURL.get("/auth/logout", {withCredentials: true})
+                    await mainURL.get("/auth/logout")
                     
                         set({ isLoggedIn: false })  
                         set({ user: null})
