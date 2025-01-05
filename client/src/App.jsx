@@ -23,8 +23,10 @@ function App() {
   useEffect(() => {
     if(user) {
       return 
+    } else {
+      setUser()
     }
-    setUser()
+
   }, [])
 
   useEffect(() => {
