@@ -111,10 +111,11 @@ export const imageStore = create(
       addImage: async (e) => {
         set({ loading: true })
         const auth = authStore.getState().data._id  
-          const res = await mainURL.post(`/api/create/image/${e.target.id}`, { auth })
+        console.log("hello")
+          await mainURL.post(`/api/create/image/${e.target.id}`, { auth })
           .then(result => {
-                set({ loading: false})
-                toast.success("Image Added Successfully")
+ 
+                set({ loading: false}) 
           })
           .catch((err) => console.log(err))
       },
