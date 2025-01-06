@@ -19,14 +19,14 @@ function App() {
   const isOpen = imageStore((state) => state.isOpen)
   const setUser = authStore((state) => state.setUser)
   const user = authStore((state) => state.user)
+  const isLoggedIn = authStore((state) => state.isLoggedIn)
 
   useEffect(() => {
-    if(user) {
+    if(isLoggedIn) {
       return 
     } else {
       setUser()
     }
-
   }, [])
 
   useEffect(() => {
