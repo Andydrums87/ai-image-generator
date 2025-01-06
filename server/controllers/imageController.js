@@ -66,7 +66,7 @@ const addImage = async (req, res) => {
   const userId  = req.body
   const imageId = req.params.id
   try {
-    if(!userId) {
+    if(!req.user) {
       res.status(400).send({ message: "please sign in to continue"})
       return 
     }
