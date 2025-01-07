@@ -93,36 +93,25 @@ export const imageStore = create(
         set({ loading: true })
         set({ images: null})
         const { form } = imageStore.getState()
-        const auth = authStore.getState().data.user
-            await mainURL.post("/api/create", form)
-            .then(result => {
-            let imgSrc = result.data
-             set({ images: result.data })
-                set({ form: {
-                    prompt: "",
-                    size:"",
-                    style: "",
-                }})
-            
-                if(!auth) {
-                  set({ loading: false })
-                  return 
-                } 
-                mainURL.post("/api/upload", imgSrc)
-                then(result => {
-                  set({ images: result.data })
-                  set({ form: {
-                    prompt: "",
-                    size:"",
-                    style: "",
-                }})
-                set({ loading: false })
-                })
-            })
-            .catch((err) => {
-                console.log(err)
-                set({ loading: false})
-            })
+        const auth = authStore.getState().data._id
+        console.log(auth)
+        try {
+          const res = await mainURL.post("/api/create", form)
+          set({ images: res.data})
+          const imgSrc = res.data
+          if(!auth) {
+            set({ loading: false})
+            console.log("no auth")
+            return 
+          } else {
+            const res = await mainURL.post("/api/upload", imgSrc)
+            console.log(res)
+            set({ loading: false})
+          }
+        } catch (err) {
+          console.log(err)
+        }
+          
       },
       addImage: async (e) => {
         set({ loading: true })
@@ -266,3 +255,33 @@ export const imageStore = create(
 )
 
 export default imageStore;
+
+// await mainURL.post("/api/create", form)
+// .then(result => {
+// let imgSrc = result.data
+//  set({ images: result.data })
+//     set({ form: {
+//         prompt: "",
+//         size:"",
+//         style: "",
+//     }})
+
+//     if(!auth) {
+//       set({ loading: false })
+//       return 
+//     } 
+//     await mainURL.post("/api/upload", imgSrc)
+//     then(result => {
+//       set({ images: result.data })
+//       set({ form: {
+//         prompt: "",
+//         size:"",
+//         style: "",
+//     }})
+//     set({ loading: false })
+//     })
+// })
+// .catch((err) => {
+//     console.log(err)
+//     set({ loading: false})
+// })
