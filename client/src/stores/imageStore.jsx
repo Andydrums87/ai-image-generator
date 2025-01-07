@@ -121,6 +121,10 @@ export const imageStore = create(
       addImage: async (e) => {
         set({ loading: true })
         const auth = authStore.getState().data._id  
+        if(!auth) {
+          set({ loading: false})
+          return;
+        }
           const res = await mainURL.post(`/api/create/image/${e.target.id}`, { auth })
           .then(result => {
               set({ loading: false}) 
