@@ -3,6 +3,7 @@ const router = express.Router();
 const { fetchCollection, fetchCollections } = require("../controllers/userCollectionController")
 const { 
     createImage, 
+    uploadImage,
     addImage, 
     deleteImage, 
     searchImages, 
@@ -19,6 +20,7 @@ router.get('/collection/:id', fetchCollection)
 router.get('/collections/:id', fetchCollections)
 router.get('/allImages/results', fetchAllImages)
 router.post('/create', createImage)
+router.post('/upload', uploadImage)
 router.post('/create/image/:id', addImage)
 router.delete("/delete/image/:id", deleteImage)
 

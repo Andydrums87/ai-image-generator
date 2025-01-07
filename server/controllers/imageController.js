@@ -16,8 +16,6 @@ const openai = new OpenAI({
 
 const createImage = async (req, res) => {
     const { prompt, size, style } = req.body;
-    
-
     try {
       const response = await openai.images.generate({
         prompt,
@@ -28,48 +26,82 @@ const createImage = async (req, res) => {
         response_format: "b64_json"
       });
       const imgSrc = `data:image/jpeg;base64,${response.data[0].b64_json}`;
-      
-      if(!req.user) {
-        res.json({ imgSrc })
-        return 
-      } 
-      const result = await cloudinary.uploader.upload(imgSrc, {
-              overwrite: true,
-              invalidate: true,
-              secure: true,
-              public_id: `${Date.now()}`,
-            });
-           const image = await Image.create({
-              imageUrl: result.secure_url,
-              prompt,
-              size,
-              style,
-              user: req.user._id || undefined,
-              author: {
-                ownerId: req.user._id || undefined,
-                name: req.user.name || undefined,
-                avatar: req.user.avatar || undefined,
-              }
-            })
-        res.status(200).send({
-        image_url: imgSrc,
-        size: size,
-        image
-      });
-    
+
+      res.status(200).send({ image_url: imgSrc })
+
     } catch (err) {
-      res.send(err.message);
+      console.log(err)
     }
-}
+  }
+
+  const uploadImage = async (req, res) => {
+    const { imgSrc } = req.body
+    try {
+      const result = await cloudinary.uploader.upload(imgSrc, {
+        overwrite: true,
+        invalidate: true,
+        secure: true,
+        public_id: `${Date.now()}`,
+      });
+     const image = await Image.create({
+        imageUrl: result.secure_url,
+        prompt,
+        size,
+        style,
+        user: req.user._id || undefined,
+        author: {
+          ownerId: req.user._id || undefined,
+          name: req.user.name || undefined,
+          avatar: req.user.avatar || undefined,
+        }
+      })
+  res.status(200).send({
+  image_url: imgSrc,
+  size: size,
+  image
+});
+    }
+  
+          
+           catch (err) {
+            res.send(err.message);
+          }
+  
+        }  
+//     const imgSrc = `data:image/jpeg;base64,${response.data[0].b64_json}`;
+//       const result = await cloudinary.uploader.upload(imgSrc, {
+//               overwrite: true,
+//               invalidate: true,
+//               secure: true,
+//               public_id: `${Date.now()}`,
+//             });
+//            const image = await Image.create({
+//               imageUrl: result.secure_url,
+//               prompt,
+//               size,
+//               style,
+//               user: req.user._id || undefined,
+//               author: {
+//                 ownerId: req.user._id || undefined,
+//                 name: req.user.name || undefined,
+//                 avatar: req.user.avatar || undefined,
+//               }
+//             })
+//         res.status(200).send({
+//         image_url: imgSrc,
+//         size: size,
+//         image
+//       });
+    
+//     } catch (err) {
+//       res.send(err.message);
+//     }
+// }
 
 const addImage = async (req, res) => {
   const userId  = req.body
   const imageId = req.params.id
   try {
-    if(!req.user) {
-      res.status(400).send({ message: "please sign in to continue"})
-      return 
-    }
     const image = await Image.find({ _id: imageId  })
     const collection = await UserCollection.create({
         originalId: image[0]?._id,
@@ -189,6 +221,7 @@ const fetchAllImages = async (req, res) => {
 
 module.exports = { 
   createImage, 
+  uploadImage,
   addImage, 
   deleteImage, 
   searchImages, 
