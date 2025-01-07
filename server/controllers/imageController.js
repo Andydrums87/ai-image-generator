@@ -36,6 +36,7 @@ const createImage = async (req, res) => {
 
   const uploadImage = async (req, res) => {
     const { imgSrc } = req.body
+    console.log(imgSrc)
     try {
       const result = await cloudinary.uploader.upload(imgSrc, {
         overwrite: true,
