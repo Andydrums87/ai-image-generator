@@ -93,15 +93,31 @@ export const imageStore = create(
         set({ loading: true })
         set({ images: null})
         const { form } = imageStore.getState()
+        const auth = authStore.getState().data.user
             await mainURL.post("/api/create", form)
             .then(result => {
+            let imgSrc = result.data
              set({ images: result.data })
                 set({ form: {
                     prompt: "",
                     size:"",
                     style: "",
                 }})
+            
+                if(!auth) {
+                  set({ loading: false })
+                  return 
+                } 
+                mainURL.post("/api/upload", imgSrc)
+                then(result => {
+                  set({ images: result.data })
+                  set({ form: {
+                    prompt: "",
+                    size:"",
+                    style: "",
+                }})
                 set({ loading: false })
+                })
             })
             .catch((err) => {
                 console.log(err)
