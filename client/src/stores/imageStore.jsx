@@ -120,7 +120,7 @@ export const imageStore = create(
       },
       addImage: async (e) => {
         set({ loading: true })
-        const auth = authStore.getState().data._id  
+        const auth = authStore.getState().user 
         if(!auth) {
           set({ loading: false})
           return;
