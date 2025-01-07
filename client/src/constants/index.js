@@ -20,7 +20,7 @@ const navItems = [
 
 
   const signInButtons = [
-    {id: 0, image: Google, url: "http://localhost:8080/auth/google/callback", alt: "Google", text: "Sign In with Google"},
+    {id: 0, image: Google, url: "https://server.ai-image-project.com/auth/google/callback", alt: "Google", text: "Sign In with Google"},
     {id: 1, image: Facebook, url: "https://server.ai-image-project.com/auth/facebook/callback", alt: "Facebook", text: "Sign In with Facebook"},
   ]
 
