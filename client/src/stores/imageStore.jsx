@@ -93,21 +93,26 @@ export const imageStore = create(
         set({ loading: true })
         set({ images: null})
         const { form } = imageStore.getState()
-        const auth = authStore.getState().data._id
-        console.log(auth)
+        const auth = authStore.getState().user
         try {
           const res = await mainURL.post("/api/create", form)
-          set({ images: res.data})
           const imgSrc = res.data
+
           if(!auth) {
-            set({ loading: false})
-            console.log("no auth")
-            return 
-          } else {
-            const res = await mainURL.post("/api/upload", imgSrc)
-            console.log(res)
-            set({ loading: false})
+            set({ images: res.data})
+            set({ loading: false })
+            return;
           }
+
+            await mainURL.post("/api/upload", { imgSrc, auth })
+            set({ images: res.data})
+            set({ form: {
+                prompt: "",
+                size:"",
+                style: "",
+                colors: "",
+              }})
+            set({ loading: false})
         } catch (err) {
           console.log(err)
         }
@@ -116,11 +121,9 @@ export const imageStore = create(
       addImage: async (e) => {
         set({ loading: true })
         const auth = authStore.getState().data._id  
-
           const res = await mainURL.post(`/api/create/image/${e.target.id}`, { auth })
           .then(result => {
- 
-                set({ loading: false}) 
+              set({ loading: false}) 
           })
           .catch((err) => console.log(err))
       },
