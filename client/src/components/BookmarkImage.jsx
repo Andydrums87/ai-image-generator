@@ -78,7 +78,7 @@ const BookmarkImage = ({ img, id }) => {
                     src={Bookmark} 
                     alt="delete image" 
                     id={id} 
-                    onClick={(e) => { unBookmark(); deleteImage(e)}}
+                    onClick={(e) => {unBookmark(); deleteImage(e)}}
                     className={collectionId?.includes(img._id) || collectionId?.includes(img.originalId)
                       ? "bg-violet-100 p-1 rounded-md h-[20%]" 
                       : "bg-grey-black p-1 rounded-md h-[20%]" 

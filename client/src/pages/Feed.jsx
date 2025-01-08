@@ -43,7 +43,7 @@ const Feed = () => {
 
     return (
      
-  <div className={`md:w-[90%] min-h-[100vh] px-5`}>
+  <div className={`min-h-[100vh] px-5`}>
  
     {isLoading 
     ? 

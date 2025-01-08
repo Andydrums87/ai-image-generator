@@ -52,7 +52,7 @@ const handleNav = () => {
             nav 
               ? "blur-md" 
               : "" }
-              pt-20 md:py-10 md:px-3 w-[100%] md:ml-20 min-h-screen`}>
+              pt-20 md:py-10 md:px-3 max-w-[100%] md:ml-20 max-h-screen`}>
      <Routes>
         <Route path="/" element={ <CreateImagePage /> }/>
         <Route path="/create" element={ <CreateImagePage /> }/>

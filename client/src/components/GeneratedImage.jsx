@@ -12,7 +12,7 @@ const GeneratedImage = () => {
 
    
     return (
-        <div className="md:w-[45%] mt-20 md:mt-0 
+        <div className="md:w-[50%] mt-20 md:mt-0 
         h-[500px] bg-grey-black flex flex-col 
         justify-center items-center relative">
             {loading ?
